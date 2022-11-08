@@ -15,11 +15,11 @@
     /*Font Sizes*/
     --text-xxl: 4.8em;
     --text-xl: 3.4em;
-    --text-lg: 2.6em;
+    --text-lg: 2.8em;
     --text-md: 2.2em;
     --text-sm: 1.6em;
-    --text-xs: 1.4em;
-    --text-xxs: 1.2em;
+    --text-xs: 1.2em;
+    --text-xxs: 0.8em;
 
     /*Spacings*/
     --sp-xxl: 12rem;
@@ -102,16 +102,32 @@ header{
     align-items: center;
 }
 
+.menu__link{
+    font-size: var(--text-sm);
+}
 .hamburguer{
     display: none;
+    width: 60px;
+    height: 60px;
 }
 
-.menu .menu__link{
+.checkevent{
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 0;
+    top: 10px;
+    opacity: 0;
+}
+
+.menu__link{
     padding: var(--sp-xs) var(--sp-xs);
-    transition: all .5s ease-in-out;
+    
 }
 
-.menu .menu__link:hover{
+.menu__link:hover{
+    transition: all .5s ease-in-out;
     background-color: var(--accent);
     color: var(--primary);
 }
@@ -142,19 +158,18 @@ header{
 
 .historia__title{
     font-size: var(--text-lg);
-    margin-bottom: var(--sp-xl);
+    margin-bottom: var(--sp-lg);
     font-weight: 500;
 }
 
 .historia__highlight{
     font-size: var(--text-md);
-    margin-bottom: var(--sp-xl);
-    font-weight: 500;
+    margin-bottom: var(--sp-md);
+    font-weight: 300;
 }
 
 .historia__highlight_last{
     font-size: var(--text-sm);
-    /* margin-bottom: var(--sp-md); */
     font-weight: 300;
 }
 
@@ -207,6 +222,15 @@ header{
     place-content: center;
 }
 
+.ferias__img_p{
+    width: 576px;
+}
+
+.ferias__img{
+    max-width: 100%;
+    width: 284px;
+}
+
 .ferias__item{
     position: relative;
     color: var(--primary);
@@ -220,7 +244,7 @@ header{
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: var(--text-sm);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .ferias__item:nth-of-type(1){
@@ -264,15 +288,6 @@ header{
     font-weight: bold;
 }
 
-/* .regiones__images{
-    display: grid;
-    column-gap: var(--sp-md);
-    row-gap: var(--sp-xxl);
-    margin-bottom: var(--sp-xxl);
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 327px);
-} */
-
 .regiones__item{
     text-align: center;
     color: var(--primary);
@@ -280,7 +295,12 @@ header{
 
 .regiones__item_text{
     font-size: var(--text-md);
-    font-weight: 600;
+    font-weight: 500;
+}
+
+.regiones__img{
+    max-width: 100%;
+    width: 250px;
 }
 
 /* ACTUALIDAD */
@@ -296,10 +316,10 @@ header{
 }
 
 .actualidad__title{
-    font-size: var(--sp-lg);
+    font-size: var(--sp-md);
     text-align: center;
     color: var(--accent);
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .actualidad__images{
@@ -321,6 +341,7 @@ header{
     left: 20%;
     transform: translate(-5%, -50%);
     font-size: var(--text-sm);
+    font-weight: 500;
 }
 
 /* CONTACTO */
@@ -357,6 +378,14 @@ footer{
     padding: var(--sp-sm);
 }
 
+.navbar__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
 .navbar .menu_footer{
     display: flex;
     justify-content: space-between;
@@ -366,8 +395,14 @@ footer{
 .text__footer{
     display: flex;
     flex-direction: column;
-    text-align: center;
     color: var(--dark);
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.text__footer_p{
+    font-size: var(--text-sm);
+    text-align: center;
 }
 
 .menu__footer .menu__footer_link{
@@ -375,13 +410,15 @@ footer{
     transition: all .5s ease-in-out;
 }
 
-.menu__footer .menu__footer__link:hover{
+.menu__footer__link:hover{
     background-color: var(--accent);
     color: var(--primary);
+    transition: all .5s ease-in-out;
 }
 
-
-
+.menu__footer__link{
+    font-size: var(--text-sm);
+}
 
 /* MEDIAS QUERIES*/
 
@@ -445,33 +482,57 @@ footer{
 @media screen and (max-width: 992px) {
 
     /* HEADER */
-    .navbar{
-        place-content: center;
+    
+    .menu__link{
+        font-size: var(--text-xs);
+    }
+
+    .navbar__img{
+        max-width: 100%;
+        width: 300px;
     }
   
     /* HISTORIA */
-
     #historia div{
         flex-direction: column;
+        gap: var(--sp-md);
     }
 
     .historia__title{
-        margin-bottom: var(--sp-md);
+        font-size: var(--text-md);
+        margin-bottom: var(--sp-sm);
+        text-align: center;
     }
     
     .historia__highlight{
-        margin-bottom: var(--sp-md);
+        margin-bottom: var(--sp-sm);
+        font-size: var(--text-sm);
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .historia__highlight_last{
+        text-align: center;
     }
     
     .historia__text{
-        font-size: var(--text-xxs);
+        font-size: var(--text-xs);
     }
 
     .historia__text_last{
-        font-size: var(--text-xxs);
+        font-size: var(--text-xs);
     }
     
     /* FERIAS */
+
+    .ferias__title{
+        font-weight: 500;
+    }
+    
+    .ferias__highlight{
+        font-size: var(--text-sm);
+        font-weight: 500;
+    }
 
     .ferias__images{
         display: grid;
@@ -485,7 +546,6 @@ footer{
         position: relative;
         text-align: center;
         color: var(--primary);
-        font-size: var(--text-sm);
     }
     
     .ferias__item_text{
@@ -493,6 +553,8 @@ footer{
         top: 50%;
         left: 30%;
         transform: translate(-20%,-50%);
+        font-size: var(--text-sm);
+        font-weight: 500;
     }
     
     .ferias__item:nth-of-type(1){
@@ -522,37 +584,56 @@ footer{
         grid-row: 4;
     }
 
+    /* REGIONES */
+
+    .regiones__title{
+        font-weight: 500;
+    }
+
+    .regiones__item{
+        text-align: center;
+        color: var(--primary);
+    }
+
+    .regiones__item_text{
+        font-size: var(--text-sm);
+        font-weight: 300;
+    }
+
     /* ACTUALIDAD */
 
+    .actualidad__title{
+        font-weight: 500;
+    }
+    
     .actualidad__images{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
     }
+    
+    /* FOOTER */
+
+    .navbar__footer_img{
+        max-width: 100%;
+        width: 80px;
+    }
+
+    .text__footer_p, .menu__footer__link{
+        font-size: var(--text-xs);
+    }
 }
 
 @media screen and (max-width: 768px) { 
-    .navbar{
-        display: flex;
-        align-items: center;
-        place-content: center;
-    } 
-
-    /* .navbar .menu{
-        display: none;
-    }
-
-    .hamburguer{
-        display: block;
-    } */
-}
-
-@media screen and (max-width: 576px) { 
-    .navbar{
-        display: flex;
-        align-items: center;
-        place-content: center;
+    
+  /* HEADER */
+    
+  .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     } 
 
     .navbar .menu{
@@ -560,8 +641,143 @@ footer{
         align-content: center;
     }
 
-    .hamburguer{
+    .menu{
+        flex-basis: 100%;
+        text-align: right;
+    }
+
+    .navbar__img{
+        max-width: 100%;
+        width: 300px;
+    }
+
+    .hamburguer, .checkevent{
         display: block;
+    }
+/* 
+    .hamburguer:hover{
+        background-color: var(--accent);
+        color: var(--primary);
+        transition: all .5s ease-in-out;
+    } */
+
+    .checkevent:checked + .menu {
+        display: block;
+    }
+
+    .text__footer_p{
+        font-size: var(--text-xxs);
+    }
+
+    /* HISTORIA */
+
+    .historia__title{
+        font-size: var(--text-md);
+    }
+
+    .historia__highlight{
+        font-size: var(--text-xs);
+    }
+
+    .historia__highlight_last{
+        font-size: var(--text-xs);
+    }
+
+    /* FERIAS */
+    .ferias__title{
+        font-size: var(--text-md);
+        font-weight: 500;
+    }
+    
+    .ferias__highlight{
+        font-size: var(--text-xs);
+        font-weight: 500;
+    }
+
+       /* REGIONES */
+
+    .regiones__title{
+        font-size: var(--text-md);
+        font-weight: 500;
+    }
+
+    .regiones__item_text{
+        font-size: var(--text-sm);
+        font-weight: 300;
+    }
+
+    /* ACTUALIDAD */
+
+    .actualidad__title{
+        font-weight: 500;
+    }
+
+    .actualidad__img{
+        max-width: 100%;
+        width: 245px;
+    }
+    
+    .actualidad__images{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+}
+
+@media screen and (max-width: 576px) { 
+
+  
+    /* HEADER */
+
+    .navbar__img{
+        max-width: 100%;
+        width: 200px;
+    }
+
+    .hamburguer, .checkevent{
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu__link{
+        font-size: var(--text-xs);
+    }
+
+    /* HISTORIA */
+
+    .historia__title{
+        font-size: var(--text-sm);
+        font-weight: 500;
+    }
+
+    .historia__highlight{
+        font-size: var(--text-xs);
+        font-weight: 500;
+    }
+
+    .historia__highlight_last{
+        font-size: var(--text-xs);
+        font-weight: 500;
+    }
+
+    .historia__text{
+        font-size: var(--text-xxs);
+    }
+    
+    .historia__text_last{
+        font-size: var(--text-xxs);
+    }
+
+    /* FERIAS */
+
+    .ferias__title{
+        font-size: var(--text-sm);
+    }
+
+    .ferias__highlight{
+        font-weight: 300;
     }
 
     .ferias__images{
@@ -569,5 +785,50 @@ footer{
         flex-wrap: wrap;
         justify-content:space-evenly;
         align-items: center;
+    }
+
+    .ferias__img_p{
+        max-width: 100%;
+        width: 284px;
+    }
+
+    /* REGIONES */
+
+    .regiones__title{
+        font-size: var(--text-sm);
+    }
+
+    .regiones__item_text{
+        font-size: var(--text-xs);
+    }
+
+    /* ACTUALIDAD */
+
+    .actualidad__title{
+        font-size: var(--text-sm);
+    }
+
+    /* FOOTER */
+    
+    .navbar__footer_img{
+        max-width: 100%;
+        width: 50px;
+    }
+    
+    .navbar__footer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+
+
+    .text__footer_p{
+        font-size: var(--text-xxs);
+    }
+
+    .menu__footer__link{
+        font-size: var(--text-xs);
     }
 }
